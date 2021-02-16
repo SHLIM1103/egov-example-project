@@ -7,10 +7,10 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<tiles:insertAttribute name="head"/>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="${cmm}/js/cmm.js"></script>
+<script src="${mem}/js/mem.js"></script>
 </head>
-<body>
-<tiles:insertAttribute name="container"/>
-<tiles:insertAttribute name="footer"/>
-</body>
 </html>

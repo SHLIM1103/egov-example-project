@@ -1,23 +1,13 @@
 'use strict'
 var cmm = cmm || {}
-cmm = (() => {
-	const init = x => {
-		$(`#prd-btn`).click(e => {
-			location.href=`${x}/move/prd/list`
+cmm.joinPage = x => {
+		$(`#joinPage-btn`).click( e=> {
+			location.href = `mem/join`
 		})
 	}
-	
-	const home = x => {
-		$(`#home-btn`).click(e => {
-			location.href=`${x}/`
+cmm.loginPage = x => {
+		$(`#loginPage-btn`).click( e=> {
+			location.href = `mem/login`
 		})
 	}
-	
-	const add = x => {
-		$(`#add-btn`).click(e => {
-			location.href=`${x}/move/prd/add`
-		})
-	}
-	
-	return { init, home, add }
-})()
+
