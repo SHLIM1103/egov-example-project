@@ -38,6 +38,8 @@ login.log = x =>{
 			if(d.message === 'SUCCESS'){
 				alert(`로그인 성공`)
 				 location.href =`${x}/admin/board`
+			
+			
 			}else{
 				alert('로그인 실패')
 			}},

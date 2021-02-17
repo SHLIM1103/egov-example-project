@@ -1,8 +1,12 @@
 package com.example.demo.brd.web;
 
-import java.util.HashMap;  
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.HashMap;   
 import java.util.List;
 import java.util.Map;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -29,24 +33,33 @@ public class BoardController {
 	
 	@PostMapping("/writter")
     public Map<?, ?> writter(@RequestBody Board b) {
-        var map = new HashMap<>();
+		String date = String.format("%s %s", LocalDate.now(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("a HH시 mm분")));
+		System.out.println(date);
+        var map = new HashMap<>(); 
+        b.setWrittenDate(date);
         map.put("message", (boardMapper.insertWritter(b) == 1) ? "SUCCESS" : "FAILURE");
         return map;
     }
+	
 	@GetMapping("/list")
     public List<Board> list(){
         return boardMapper.selectAll();
     }
+	
 	@GetMapping("/{title}")
 	public Board det(@PathVariable String title) {
 		return boardMapper.selectById(title);
-	}
+	}	
+	
 	@PutMapping("/update")
 	public Map<?, ?> update(@RequestBody Board b){
 		var map = new HashMap<>();
+		String date = String.format("%s %s", LocalDate.now(), LocalDateTime.now().format(DateTimeFormatter.ofPattern("a HH시 mm분")));
+		b.setWrittenDate(date);
 		map.put("message",boardMapper.update(b) == 1 ? "SUCCESS" : "FAILURE");
 		return map;
 	}
+	
 	@DeleteMapping("/remove")
 	public Map<?, ?> remove(@RequestBody Board b){
 		var map = new HashMap<>();

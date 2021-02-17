@@ -141,7 +141,7 @@ span.psw {
       <label for="password"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" id="password" required>  
       <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-      <button type="submit" id="login-btn">Login</button>
+      <button type="button" id="login-btn">Login</button>
     </div>
 
     </form>

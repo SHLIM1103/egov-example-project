@@ -14,6 +14,7 @@
             <tr>
                 <th style="width:20%" class="text-center">글번호</th>
                 <th style="width:20%" class="text-center">제목</th>
+                <th class="text-center">등록 시간</th>
     </table>
     
     <script>

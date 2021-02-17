@@ -2,6 +2,7 @@
 var board = board || {}
 board = (() => {
 	const writer = x => {
+
 	$.ajax({
 		url: `${x}/boards/writter`,
 		type: 'POST',
@@ -30,6 +31,8 @@ const list = x =>{
 				$(`<tr></td>
 					<td>${j.boardNum}</td>
 					<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
+					<td>${j.writtenDate}</td>
+					
 					</tr>`)
 					.css({padding: `20px`, textAlign: `center`})
 					.appendTo(`#tab`)
@@ -47,6 +50,7 @@ const list = x =>{
 	const det = x => {
 		$.getJSON(`${x}/boards/${localStorage.getItem(`title`)}`, d => {
 			$(`#boardNum`).text(d.boardNum)
+			$(`#writtenDate`).text(d.writtenDate)
 			$(`#boardTitle`).text(d.title)
 			$(`#boardContent`).text(d.content)
 			

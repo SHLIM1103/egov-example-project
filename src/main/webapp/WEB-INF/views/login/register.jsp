@@ -132,7 +132,7 @@ hr {
       <input type="password" placeholder="Enter Password" id="password" required>
       
         <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-        <button type="submit" id="signupbtn">Sign Up</button>
+        <button type="button" id="signupbtn">Sign Up</button>
      
     </div>
   </form>

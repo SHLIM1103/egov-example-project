@@ -8,13 +8,13 @@
  
     <li><a id="home" href="#"> Go Home </a></li>
     <li><a id="back" href="#"> 메뉴로 가기 </a></li>
+     <tr><th style="width: 10%" >글번호: <span id="boardNum"></span></th></tr>
+    <tr><br><th style="width: 10%" >작성시간: <span id="writtenDate"></span></th></<br></tr>      
+    <tr><br> <th style="width: 10%" class="text-center">제목: <span id="boardTitle"></span></th></br></tr>
      <table class="tab">
         <thead>
-            <tr class="table-active">
-                <th style="width: 50%">글번호: <span id="boardNum"></span></th>
-                <th style="width: 50%">제목: <span id="boardTitle"></span></th>
-   
              <tr><td colspan="4" style="width: 50%">
+             		내용:
                   <div id="boardContent" style="height: 300px">
                       
                   </div>
