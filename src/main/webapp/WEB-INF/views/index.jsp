@@ -10,7 +10,8 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 		<style>
 			h1 { text-align: center; padding-top: 20px; }
-			button{width:100px;height:35px;font-size: 15px;background:#33CC99;color:#fff;border:none;}
+			button{ width:100px;height:35px;font-size: 15px;background:#33CC99;color:#fff;border:none; }
+			button:hover { opacity: 0.8; }
 		</style>
 	</head>
 	<body>

@@ -89,7 +89,7 @@ const list = x =>{
 					contentType: `application/json`,
 					success: d => {
 						if(d.message === `SUCCESS`) {
-							alert(`삭제완료`)
+							alert(`삭제 완료`)
 							location.href=`${x}/move/board/writerList`
 						}else {
 							alert(`삭제 실패`)

@@ -11,7 +11,9 @@
 	}
 	td {border: 1px solid black; padding: 7px;}
 	button{width:100px;height:35px;font-size: 15px;background:#33CC99;color:#fff;border:none;}
+	button:hover { opacity: 0.8; }	
 </style>
+
 <h1>제품 등록하기</h1>
 <form>
 	<table style="width:80%; padding: 10px;">
@@ -23,17 +25,17 @@
 		  <tr>
 		    <td>제품명</td>
 		    <td><input id="prdName" type="text" name="prdName" class="form-control" 
-		    		   placeholder="제품명 입력" style="width:95%;height:100%;font-size:medium;" required></td>
+		    		   placeholder="제품명 입력" style="width:95%; height:100%; font-size:medium;" required></td>
 		  </tr>
 		  <tr>
 		    <td>판매가</td>
 		    <td><input id="price" type="text" name="price" class="form-control"
-		    		   placeholder="판매가 입력" style="width:95%;height:100%;font-size:medium;" required></td>
+		    		   placeholder="판매가 입력" style="width:95%; height:100%; font-size:medium;" required></td>
 		  </tr>
 		  <tr>
 		    <td>재고수량</td>
 		    <td><input id="inventory" type="text" name="inventory" class="form-control"
-		    		   placeholder="재고수량 입력" style="width:95%;height:100%;font-size:medium;"></td>
+		    		   placeholder="재고수량 입력" style="width:95%; height:100%; font-size:medium;"></td>
 		  </tr>
 	  </tbody>
 	</table>

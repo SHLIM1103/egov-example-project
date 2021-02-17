@@ -1,8 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
-h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	#tab {border-collapse: collapse; width: 50%; margin: auto; text-align: center; }
-	#tab tr:hover {background-color: #dcdcdc;}
+	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
+	#tab { border-collapse: collapse; width: 50%; margin: auto; text-align: center; }
+	#tab tr:hover { background-color: #dcdcdc; }
 	#tab th {
 	  padding-top: 12px;
 	  padding-bottom: 12px;
@@ -10,16 +10,16 @@ h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
 	  color: white;
 	  border: 1px solid black;
 	}
-	#tab td {border: 1px solid black; padding: 7px;}
-	button{width:100px;height:35px;font-size: 15px;background:#33CC99;color:#fff;border:none;}
+	#tab td { border: 1px solid black; padding: 7px; }
+	button{ width:100px; height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
+	button:hover { opacity: 0.8; }
 </style>
 
-<h1> 글목록 </h1>
-
+<h1>게시글 목록</h1>
 <table id="tab" >
 	<tr>
-    	<th style="width: 20%">글번호</th>
-        <th style="width: 80%">제목</th>
+		<th style="width: 20%">글번호</th>
+		<th style="width: 80%">제목</th>
 	</tr>
 </table>
 <div style="text-align: center; padding-top: 30px;">
