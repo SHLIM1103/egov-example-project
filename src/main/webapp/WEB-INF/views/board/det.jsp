@@ -18,16 +18,17 @@
 <table id="tab" style="width:80%">
 	<thead>
 		<tr class="table-active">
-			<th style="width: 5%">No.</th>
-			<td style="width: 10%; text-align:center;"><span id="boardNum"></span></td>
-			<th style="width: 5%">제목</th>
-			<td style="vertical-align:middle"><span id="boardTitle"></span></td>
+			<th style="width: 10%">No. <span id="boardNum"></span></th>
+			<th style="width: 10%">제목</th>
+			<td style="width: 50%"><span id="boardTitle"></span></td>
+    		<th style="width: 10%">작성시간</th>
+    		<td style="vertical-align:middle"><span id="writtenDate"></span></td>   
 		</tr>
 	</thead>
 	<tbody>
 		<tr>
-		<th colspan="3">내용</th>
-		<td style="vertical-align: middle; height: 300px" colspan="1"><div id="boardContent"></div></td>
+		<th colspan="2">내용</th>
+		<td style="vertical-align: middle; height: 300px" colspan="3"><div id="boardContent"></div></td>
 		</tr>
 	</tbody>
 </table>

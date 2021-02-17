@@ -30,7 +30,7 @@ const list = x =>{
 				$(`<tr>
 					<td>${j.boardNum}</td>
 					<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
-					</tr>`)
+					<td>${j.writtenDate}</td></tr>`)
 					.css({padding: `20px`, textAlign: `center`})
 					.appendTo(`#tab`)
 			})
@@ -48,7 +48,7 @@ const list = x =>{
 			$(`#boardNum`).text(d.boardNum)
 			$(`#boardTitle`).text(d.title)
 			$(`#boardContent`).text(d.content)
-			
+			$(`#writtenDate`).text(d.writtenDate)
 			 $('#update').click(e => { 
              $('#boardTitle').html('<input type ="text" style="width:98%; height:100%;" id="update-title" value="'+d.title+'"/>')
              $('#boardContent').html('<input type="text" id="update-content" style="width:98%; height: 300px" value="' +d.content + '"/>')

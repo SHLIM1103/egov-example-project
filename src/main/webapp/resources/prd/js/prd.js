@@ -2,7 +2,6 @@
 var prd = prd || {}
 prd = (() => {
 	const done = x => {
-		alert(`클릭 성공`)
 		$.ajax({
 			url: `${x}/products`,
 			type: `POST`,

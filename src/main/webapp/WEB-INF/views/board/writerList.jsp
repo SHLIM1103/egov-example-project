@@ -18,13 +18,14 @@
 <h1>게시글 목록</h1>
 <table id="tab" >
 	<tr>
-		<th style="width: 20%">글번호</th>
-		<th style="width: 80%">제목</th>
+		<th style="width: 10%">글번호</th>
+		<th style="width: 65%">제목</th>
+		<th>등록일시</th>
 	</tr>
 </table>
 <div style="text-align: center; padding-top: 30px;">
 	<button id="wri">글쓰기</button>
-	<button id="home">Home</button>
+	<button id="home">HOME</button>
 </div>
 <script src="${board}/js/board.js"></script>
 <script>
