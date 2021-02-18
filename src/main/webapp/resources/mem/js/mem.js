@@ -33,7 +33,7 @@ mem = (() => {
 				type: 'POST',
 				data: JSON.stringify({
 					memid: $('#memid').val(),
-					name: $(`#name`).val(),
+					name: $('#name').val(),
 					password: $('#password').val()
 				}),
 				dataType: 'json',
@@ -41,13 +41,13 @@ mem = (() => {
 				success: data => {
 					if(data.message === 'SUCCESS'){
 						sessionStorage.setItem('memid', data.sessionMember.memid)
-						sessionStorage.setItem('name', data.sessionMember.name)
+						sessionStorage.setItem('memid', data.sessionMember.name)
 						sessionStorage.setItem('password', data.sessionMember.password)
 						alert(`로그인 성공 ! 환영합니다 !`)
 						location.href=`${x}/move/cmm/auth`
 					}else{
 						alert(`로그인 실패 ! 다시 시도해 주세요.`)
-						location.reload();
+						location.reload()
 					}
 				},
 				error: error => {
@@ -64,7 +64,6 @@ mem = (() => {
 				type:`PUT`,
 				data: JSON.stringify({
 					memid: sessionStorage.getItem('memid'),
-					name: $(`#name`).val(),
 					password: $('#password').val()
 				}),
 				dataType:`json`,

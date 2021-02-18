@@ -1,6 +1,6 @@
 'use strict'
-var board = board || {}
-board = (() => {
+var brd = brd || {}
+brd = (() => {
 	const writer = x => {
 		$('#writ-btn').click( e => {
 			$.ajax({
@@ -15,7 +15,7 @@ board = (() => {
 				success: d => {
 					if(d.message === 'SUCCESS'){
 						alert(`게시글 작성 완료 !`)
-						 location.href =`${x}/move/board/writerList`
+						 location.href =`${x}/move/brd/writerList`
 					}else{
 						alert('게시글 작성 실패 ! 다시 시도해 주세요.')
 					}
@@ -27,25 +27,26 @@ board = (() => {
 		})
 	}
 
-const list = x =>{
-	$.getJSON(`${x}/boards/list`, d => {
-			$.each(d, (i, j) => {
-				$(`<tr>
-					<td>${j.boardNum}</td>
-					<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
-					<td>${j.writtenDate}</td></tr>`)
-					.css({padding: `20px`, textAlign: `center`})
-					.appendTo(`#tab`)
-			})
+	const list = x =>{
+		$.getJSON(`${x}/boards/list`, d => {
+				$.each(d, (i, j) => {
+					$(`<tr>
+						<td>${j.boardNum}</td>
+						<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
+						<td>${j.writtenDate}</td></tr>`)
+						.css({padding: `20px`, textAlign: `center`})
+						.appendTo(`#tab`)
+				})
 			$(`.title`).each(function(){
 				$(this).click(e => {
 					e.preventDefault()
 					localStorage.setItem(`title`, `${this.id}`)
-					location.href=`${x}/move/board/det`
+					location.href=`${x}/move/brd/det`
 				})
 			})
 		})
-	}	
+	}
+	
 	const det = x => {
 		$.getJSON(`${x}/boards/${localStorage.getItem(`title`)}`, d => {
 			$(`#boardNum`).text(d.boardNum)
@@ -71,7 +72,7 @@ const list = x =>{
 						success: d => {
 							if(d.message === 'SUCCESS') {
 								alert(`수정 성공 !`)
-								location.href=`${x}/move/board/writerList`
+								location.reload()
 							}else {
 								alert(`수정 실패 ! 다시 시도해 주세요.`)
 							}
@@ -93,7 +94,7 @@ const list = x =>{
 					success: d => {
 						if(d.message === `SUCCESS`) {
 							alert(`삭제 완료 !`)
-							location.href=`${x}/move/board/writerList`
+							location.href=`${x}/move/brd/writerList`
 						}else {
 							alert(`삭제 실패 ! 다시 시도해 주세요.`)
 						}
@@ -103,5 +104,5 @@ const list = x =>{
 			})
 		})
 	}
-	return {list, writer, det}
+	return { list, writer, det }
 	})()

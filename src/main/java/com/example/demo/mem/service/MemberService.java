@@ -21,8 +21,5 @@ public class MemberService {
 	public int withdrawal(Member m) {
 		return memberMapper.delete(m);
 	}
-	public Member getMember(String memid) {
-		return null;
-	}
 
 }

@@ -10,14 +10,14 @@ cmm = (() => {
 	}
 	
 	const write = x => {
-		$(`#wri`).click( e => { location.href=`${x}/move/board/writer` })
+		$(`#wri`).click( e => { location.href=`${x}/move/brd/writer` })
 	}
 	const add = x => {
 		$(`#add-btn`).click(e => { location.href=`${x}/move/prd/add` })
 	}
 	
 	const board = x => {
-		$(`#board-btn`).click(e => { location.href=`${x}/move/board/writerList` })
+		$(`#board-btn`).click(e => { location.href=`${x}/move/brd/writerList` })
 	}
 	
 	const joinPage = x => {

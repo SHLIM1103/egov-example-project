@@ -20,10 +20,10 @@
 	<button id="wri">글쓰기</button>
 	<button id="auth-btn">HOME</button>
 </div>
-<script src="${board}/js/board.js"></script>
+<script src="${brd}/js/brd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
-	board.list(`${ctx}`)
+	brd.list(`${ctx}`)
 	cmm.auth(`${ctx}`)	
 	cmm.write(`${ctx}`)
 </script>

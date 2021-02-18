@@ -26,10 +26,10 @@
 	<button id="board-btn">뒤로가기</button>
 	<button id="auth-btn">HOME</button>
 </div>
-<script src="${board}/js/board.js"></script>
+<script src="${brd}/js/brd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
-	board.writer(`${ctx}`)
+	brd.writer(`${ctx}`)
 	cmm.board(`${ctx}`)
 	cmm.auth(`${ctx}`)
 </script>

@@ -22,7 +22,7 @@
 	<tbody>
 		<tr>
 		<th colspan="2">내용</th>
-		<td style="vertical-align: middle; height: 300px" colspan="3"><div id="boardContent"></div></td>
+		<td style="text-align: left; vertical-align: middle; height: 300px" colspan="3"><div id="boardContent"></div></td>
 		</tr>
 	</tbody>
 </table>
@@ -34,10 +34,10 @@
 	<button id="board-btn">목록보기</button>
 	<button id="auth-btn">HOME</button>
 </div>
-<script src="${board}/js/board.js"></script>
+<script src="${brd}/js/brd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
 	cmm.board(`${ctx}`)
-	board.det(`${ctx}`)
+	brd.det(`${ctx}`)
 	cmm.auth(`${ctx}`)
 </script>

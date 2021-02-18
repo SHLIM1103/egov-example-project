@@ -22,11 +22,9 @@ import com.example.demo.mem.service.MemberService;
 @RestController
 @RequestMapping("/members")
 public class MemberController {
-	
-	private final Logger logger = LoggerFactory.getLogger(this.getClass());
-	
 	@Autowired MemberMapper memberMapper;
 	@Autowired MemberService memberService;
+	private final Logger logger = LoggerFactory.getLogger(this.getClass());
 	
 	@PostMapping("/join")
 	public Map<?,?> join(@RequestBody Member m) {
@@ -38,10 +36,8 @@ public class MemberController {
 	@PostMapping("/login")
 	public Map<?,?> login(@RequestBody Member m){
 		var map = new HashMap<>();
-        Member result = memberService.login(m);
-        map.put("message", result != null ? "SUCCESS" : "FAILURE");
-        map.put("sessionMember", result);
-		logger.info("로그인: "+ m.toString());
+        map.put("message", memberService.login(m) != null ? "SUCCESS" : "FAILURE");
+        map.put("sessionMember", memberService.login(m));
         return map;
 	}
 	

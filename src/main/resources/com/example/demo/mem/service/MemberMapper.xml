@@ -10,14 +10,11 @@
 	select memid, name, password from members
 	where memid like #{memid} and password like #{password}
 </select>
-<select id="name" parameterType="String" resultType="com.example.demo.mem.service.Member">
-	select name from members where memid like #{memid}
-</select>
 <select id="selectAll" resultType="com.example.demo.mem.service.Member">
 	select memid, name, password from members
 </select>
 <update id="update" parameterType="com.example.demo.mem.service.Member">
-	update members set name = #{name} password = #{password}
+	update members set password = #{password}
 	where memid like #{memid}
 </update>
 <delete id="delete" parameterType="com.example.demo.mem.service.Member">

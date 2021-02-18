@@ -26,7 +26,7 @@ public class HomeController {
 		sess.setAttribute("cmm", ctx + "/resources/cmm");
 		sess.setAttribute("prdt", ctx + "/resources/prd");
 		sess.setAttribute("mem", ctx + "/resources/mem");
-		sess.setAttribute("board", ctx + "/resources/board");
+		sess.setAttribute("brd", ctx + "/resources/brd");
 		sess.setAttribute("adm", ctx + "/resources/adm");
 		logger.info("***Server Started***");
 		return "index";
