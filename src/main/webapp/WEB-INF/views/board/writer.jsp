@@ -1,19 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	button{ width:100px;height:35px;font-size: 15px;background:#46AA46;color:#fff;border:none; }
-	#tab { border-collapse: collapse; width: 50%; margin: auto; text-align: center; }
-	#tab tr:hover { background-color: #dcdcdc; }
-	#tab th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  background-color: #33CC99;
-	  color: white;
-	  border: 1px solid black;
-	}
-	#tab td { border: 1px solid black; padding: 7px; }
-	button{ width:100px; height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
-	button:hover { opacity: 0.8; }
+	#tab { width: 60%; padding: 10px; border-collapse: collapse; margin: auto; text-align: center; border: 1px solid black; }
+	#tab th { padding-top: 12px; padding-bottom: 12px; background-color: #33CC99; color: white; border: 1px solid black; }
+	#tab td {border: 1px solid black; padding: 7px;}
+	button{ width: 100px;height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
+	button:hover { opacity: 0.8; }	
 </style>
 
 <h1>게시글 작성</h1>
@@ -31,13 +23,13 @@
 </form>
 <div style="text-align: center; padding-top: 30px;">			
 	<button id="writ-btn">등록하기</button>
-	<button id="back-btn">뒤로가기</button>
-	<button id="home-btn">HOME</button>
+	<button id="board-btn">뒤로가기</button>
+	<button id="auth-btn">HOME</button>
 </div>
 <script src="${board}/js/board.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
-	$('#writ-btn').click(function(){board.writer(`${ctx}`)})
-	$('#back-btn').click(function(){location.href=`${ctx}/move/board/writerList`})
-	cmm.home(`${ctx}`)
+	board.writer(`${ctx}`)
+	cmm.board(`${ctx}`)
+	cmm.auth(`${ctx}`)
 </script>

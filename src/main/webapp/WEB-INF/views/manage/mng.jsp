@@ -1,49 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	table { border-collapse: collapse; width: 80%; margin: auto; }
-	table th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  background-color: #33CC99;
-	  color: white;
-	  border: 1px solid black;
-	}
-	table td { border: 1px solid black; padding: 7px; }
-	button{ width:100px; height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
-	button:hover { opacity: 0.8; }
+	table { width: 60%; padding: 10px; border-collapse: collapse; margin: auto; text-align: center; border: 1px solid black; }
+	th { padding-top: 12px; padding-bottom: 12px; background-color: #33CC99; color: white; border: 1px solid black; }
+	td {border: 1px solid black; padding: 7px;}
+	button{ width: 100px;height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
+	button:hover { opacity: 0.8; }	
 </style>
 
-<h1>Admin Page</h1>
-<table class="table table-hover">
-	<thead>
-		<tr>
-			<th scope="col" class="text-center">email</th>
-			<th scope="col" class="text-center">password</th>
-			<th scope="col" class="text-center">ages</th>
-			<th scope="col" class="text-center">level</th>
-			<th scope="col" class="text-center">city</th>
-			<th scope="col" class="text-center">address</th>
-			<th scope="col" class="text-center">gender</th>
-			<th scope="col" class="text-center">phone</th>
-		</tr>
-	</thead>
-	<tbody id="tbody">
-	</tbody>
+<h1>회원목록 조회</h1>
+<table id="mem-tab">
+	<tr>
+		<th style="width:40%">ID</th>
+		<th>이름</th>
+	</tr>
 </table>
 <div style="text-align: center; padding-top: 30px;">
-	<button id="home">HOME</button>
+	<button id="home-btn">HOME</button>
 </div>
+<script src="${cmm}/js/cmm.js"></script>
+<script src="${adm}/js/adm.js"></script>
 <script>
-	$.getJSON(`${ctx}/managers/list`, function(d){
-		$.each(d, function(i, j){
-				$('<tr>' +
-					'<th scope="col" class="text-center">'+j.memid+'</th>'
-					'<th scope="col" class="text-center">'+j.name+'</th>'
-				'</tr>').appendTo('#tbody');
-		})
-	})
-	$(`#home`).click(function() { location.href = `${ctx}` })
+	adm.list(`${ctx}`)
+	cmm.home(`${ctx}`)
 </script>
 
 

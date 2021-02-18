@@ -1,6 +1,6 @@
 package com.example.demo.mem.service;
 
-import java.util.Map;
+import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
@@ -8,7 +8,9 @@ import org.springframework.stereotype.Repository;
 public interface MemberMapper {
 
 	public int insert(Member m);
+	public List<Member> selectAll();
 	public Member selectById(Member m);
+	public Member name(String memid);
 	public int update(Member m);
 	public int delete(Member m);
 }

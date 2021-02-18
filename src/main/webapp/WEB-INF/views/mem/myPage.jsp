@@ -16,16 +16,14 @@
 		<button style="width:200px;" id="modify-btn">비밀번호 수정</button>
 	</div>
 	<div style="text-align: center; margin-top:30px;">
-		<button id="home-btn">HOME</button>
-		<button id="logout-btn">로그아웃</button>
+		<button id="auth-btn">HOME</button>
 		<button id="withdrawal-btn">회원 탈퇴</button>
 	</div>
 </form>
 <script src="${mem}/js/mem.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
-	mem.home(`${ctx}`)
-	mem.logout(`${ctx}`)
+	cmm.auth(`${ctx}`)
 	mem.modify(`${ctx}`)
 	mem.withdrawal(`${ctx}`)
 	cmm.home(`${ctx}`)

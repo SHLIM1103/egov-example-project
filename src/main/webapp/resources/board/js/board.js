@@ -2,28 +2,31 @@
 var board = board || {}
 board = (() => {
 	const writer = x => {
-	$.ajax({
-		url: `${x}/boards/writer`,
-		type: 'POST',
-		data: JSON.stringify({
-			 title: $('#title').val(),
-             content: $('#content').val()
-		}),
-		dataType:'json',
-		contentType:'application/json',
-		success: d => {
-			if(d.message === 'SUCCESS'){
-				alert(`게시글 작성 완료 !`)
-				 location.href =`${x}/move/board/writerList`
-			}else{
-				alert('게시글 작성 실패 ! 다시 시도해 주세요.')
-			}
-		},
-		error: e => {
-        	alert('게시글 작성 에러')
-		}
-	})
-}
+		$('#writ-btn').click( e => {
+			$.ajax({
+				url: `${x}/boards/writer`,
+				type: 'POST',
+				data: JSON.stringify({
+					 title: $('#title').val(),
+		             content: $('#content').val()
+				}),
+				dataType:'json',
+				contentType:'application/json',
+				success: d => {
+					if(d.message === 'SUCCESS'){
+						alert(`게시글 작성 완료 !`)
+						 location.href =`${x}/move/board/writerList`
+					}else{
+						alert('게시글 작성 실패 ! 다시 시도해 주세요.')
+					}
+				},
+				error: e => {
+		        	alert('게시글 작성 에러')
+				}
+			})
+		})
+	}
+
 const list = x =>{
 	$.getJSON(`${x}/boards/list`, d => {
 			$.each(d, (i, j) => {

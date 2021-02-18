@@ -1,17 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	#tab { border-collapse: collapse; width: 80%; margin: auto; }
-	#tab th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  background-color: #33CC99;
-	  color: white;
-	  border: 1px solid black;
-	}
-	#tab td { border: 1px solid black; padding: 7px; }
-	button{ width:100px; height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
-	button:hover { opacity: 0.8; }
+	#tab { width: 60%; padding: 10px; border-collapse: collapse; margin: auto; text-align: center; border: 1px solid black; }
+	#tab th { padding-top: 12px; padding-bottom: 12px; background-color: #33CC99; color: white; border: 1px solid black; }
+	#tab td {border: 1px solid black; padding: 7px;}
+	button{ width: 100px;height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
+	button:hover { opacity: 0.8; }	
 </style>
 
 <h1>게시글 보기</h1>
@@ -20,9 +14,9 @@
 		<tr class="table-active">
 			<th style="width: 10%">No. <span id="boardNum"></span></th>
 			<th style="width: 10%">제목</th>
-			<td style="width: 50%"><span id="boardTitle"></span></td>
+			<td style="width: 40%"><span id="boardTitle"></span></td>
     		<th style="width: 10%">작성시간</th>
-    		<td style="vertical-align:middle"><span id="writtenDate"></span></td>   
+    		<td style="text-align: center"><span id="writtenDate"></span></td>   
 		</tr>
 	</thead>
 	<tbody>
@@ -37,12 +31,13 @@
 	<button id="delete">삭제하기</button>
 </div>
 <div style="text-align: center; padding-top: 10px;">
-	<button id="wri-list">목록보기</button>
-	<button id="home">HOME</button>
+	<button id="board-btn">목록보기</button>
+	<button id="auth-btn">HOME</button>
 </div>
 <script src="${board}/js/board.js"></script>
+<script src="${cmm}/js/cmm.js"></script>
 <script>
-	$('#home').click(function(){location.href=`${ctx}`})
-	$('#wri-list').click(function() {location.href=`${ctx}/move/board/writerList`})
+	cmm.board(`${ctx}`)
 	board.det(`${ctx}`)
+	cmm.auth(`${ctx}`)
 </script>

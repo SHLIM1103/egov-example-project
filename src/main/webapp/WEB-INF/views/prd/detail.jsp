@@ -1,22 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	#list-tab { border-collapse: collapse; width: 100%; margin: auto; text-align: center; }
-	#list-tab tr:hover { background-color: #dcdcdc; }
-	#list-tab th {
-	  padding-top: 12px;
-	  padding-bottom: 12px;
-	  background-color: #33CC99;
-	  color: white;
-	  border: 1px solid black;
-	}
-	#list-tab td { border: 1px solid black; padding: 7px; }
-	button{ width:100px; height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
-	button:hover { opacity: 0.8; }
+	#list-tab { width: 60%; padding: 10px; border-collapse: collapse; margin: auto; text-align: center; border: 1px solid black; }
+	#list-tab th { padding-top: 12px; padding-bottom: 12px; background-color: #33CC99; color: white; border: 1px solid black; }
+	#list-tab td {border: 1px solid black; padding: 7px;}
+	button{ width: 100px;height:35px; font-size: 15px; background:#33CC99; color:#fff; border:none; }
+	button:hover { opacity: 0.8; }	
 </style>
 
 <h1>제품 상세보기</h1>
-<table id="list-tab" style="width:80%">
+<table id="list-tab">
 	<thead>
 		<tr>
 			<th style="width:25%">제품번호</th>

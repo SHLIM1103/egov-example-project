@@ -31,8 +31,8 @@ prd = (() => {
 					<td><a class="title" href="#" id="${j.prdId}">${j.prdName}</a></td>
 					<td>${j.price}</td>
 					<td>${j.inventory}</td></tr>`)
-					.css({fontSize: `medium`})
-					.appendTo(`#tab`)
+				.css({fontSize: `medium`})
+				.appendTo(`#tab`)
 			})
 				
 			$(`.title`).each(function(){
