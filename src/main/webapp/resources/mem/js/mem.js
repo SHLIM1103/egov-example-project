@@ -14,15 +14,17 @@ mem.join = x => {
 			type: 'POST',
 			data: JSON.stringify({
 				memid: $('#memid').val(),
+				name: $(`#name`).val(),
 				password: $('#password').val()
 			}),
 			dataType: 'json',
 			contentType: 'application/json',
 			success: data => {
 				location.href=`${x}/move/mem/login`
+				alert(`회원가입 성공 ! 로그인 해주세요.`)
 			},
 			error: error => {
-				alert(`Fail`)
+				alert(`회원가입 도중 에러가 발생하였습니다.`)
 			}
 		})
 	})
@@ -36,6 +38,7 @@ mem.login = x => {
 			type: 'POST',
 			data: JSON.stringify({
 				memid: $('#memid').val(),
+				name: $(`#name`).val(),
 				password: $('#password').val()
 			}),
 			dataType: 'json',
@@ -43,15 +46,17 @@ mem.login = x => {
 			success: data => {
 				if(data.message === 'SUCCESS'){
 					sessionStorage.setItem('memid', data.sessionMember.memid)
+					sessionStorage.setItem('name', data.sessionMember.name)
 					sessionStorage.setItem('password', data.sessionMember.password)
+					alert(`로그인 성공 ! 환영합니다 !`)
 					location.href=`${x}/move/mem/myPage`
 				}else{
-					alert(`로그인 실패`)
+					alert(`로그인 실패 ! 다시 시도해 주세요.`)
 					location.reload();
 				}
 			},
 			error: error => {
-				alert(`Fail`)
+				alert(`로그인 도중 에러가 발생하였습니다.`)
 			}
 		})
 	});
@@ -64,22 +69,23 @@ mem.modify = x => {
 			type:`PUT`,
 			data: JSON.stringify({
 				memid: sessionStorage.getItem('memid'),
+				name: $(`#name`).val(),
 				password: $('#password').val()
 			}),
 			dataType:`json`,
 			contentType:`application/json`,
 			success: data => {
 				if(data.message === 'SUCCESS'){
-					alert('비밀번호 수정 완료')
+					alert('비밀번호 수정 완료 !')
 						location.reload();
 						sessionStorage.setItem('password', data.sessionMember.password)
 				}else{
-					alert('비밀번호 수정 실패')
+					alert('비밀번호 수정 실패 ! 다시 시도해 주세요.')
 						location.reload();
 				}
 			},
 			error: error => {
-			alert(`Fail`)
+				alert(`비밀번호 수정 도중 에러가 발생하였습니다.`)
 			}
 		})
 	})
@@ -97,16 +103,16 @@ mem.withdrawal = x => {
 			contentType:`application/json`,
 			success: data => {
 				if(data.message === 'SUCCESS'){
-					alert('회원탈퇴 완료')
+					alert('탈퇴 완료 !')
 						sessionStorage.clear()
 						location.href = `${x}/`
 				}else{
-					alert('회원탈퇴 실패')
+					alert('탈퇴 실패 !')
 						location.reload();
 				}
 			},
 			error: error => {
-			alert(`Fail`)
+			alert(`탈퇴 도중 에러가 발생하였습니다.`)
 			}
 		})
 	})

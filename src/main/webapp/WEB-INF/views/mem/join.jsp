@@ -21,6 +21,10 @@
 		<input type="text" placeholder="Enter ID" id="memid" required>
 	</div>
 	<div>
+		<label for="name"><b>NAME</b></label>
+		<input type="text" placeholder="Enter name" id="name" required>
+	</div>
+	<div>
 		<label for="password"><b>PW</b></label>
 		<input type="password" placeholder="Enter PW" id="password" required>
 	</div>

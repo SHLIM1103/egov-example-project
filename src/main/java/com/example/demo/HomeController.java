@@ -27,6 +27,7 @@ public class HomeController {
 		sess.setAttribute("prdt", ctx + "/resources/prd");
 		sess.setAttribute("mem", ctx + "/resources/mem");
 		sess.setAttribute("board", ctx + "/resources/board");
+		sess.setAttribute("manage", ctx + "/resources/manage");
 		logger.info("***Server Started***");
 		return "index";
 	}

@@ -16,6 +16,8 @@ prd = (() => {
 				if(d.message === `SUCCESS`) {
 					location.href=`${x}/move/prd/list`
 					alert(`등록 완료`)
+				} else{
+					alert(`등록 실패 ! 다시 시도해 주세요.`)
 				}
 			},
 			error: e => { alert(`제품 등록 실패: ${e}`)	}

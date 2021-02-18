@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 @Component @Lazy @Data
 @NoArgsConstructor @AllArgsConstructor
 public class Member {
-	private String memid, password;
+	private String memid, name, password;
 }

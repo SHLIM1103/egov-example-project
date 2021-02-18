@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
-	#tab { border-collapse: collapse; width: 100%; margin: auto; }
+	#tab { border-collapse: collapse; width: 80%; margin: auto; }
 	#tab th {
 	  padding-top: 12px;
 	  padding-bottom: 12px;
@@ -15,7 +15,7 @@
 </style>
 
 <h1>게시글 보기</h1>
-<table id="tab" style="width:80%">
+<table id="tab">
 	<thead>
 		<tr class="table-active">
 			<th style="width: 10%">No. <span id="boardNum"></span></th>

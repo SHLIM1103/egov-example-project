@@ -61,14 +61,14 @@ public class MemberController {
 	public Map<?,?> modify(@RequestBody Member m){
 		var map = new HashMap<>();
 		map.put("message", (memberService.modify(m) == 1? "SUCCESS" : "FAILURE"));
-		logger.info("정보 수정: "+ m.toString());
+		logger.info("수정한 회원정보: "+ m.toString());
 		return map;
 	}
 	
 	@DeleteMapping("/withdrawal")
 	public Map<?,?> withdrawal(@RequestBody Member m){
 		var map = new HashMap<>();
-		logger.info("탈퇴: "+ m.toString());
+		logger.info("탈퇴한 회원: "+ m.toString());
 		map.put("message", (memberService.withdrawal(m) == 1? "SUCCESS" : "FAILURE"));
 		return map;
 	}

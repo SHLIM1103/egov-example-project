@@ -21,6 +21,7 @@
 			<button id="loginPage-btn">로그인</button>	
 			<button id="prd-btn">제품보기</button>
 			<button id="board-btn">게시판보기</button>
+			<button id="manage-btn">관리자</button>
 		</div>
 		<script src="${cmm}/js/cmm.js"></script>
 		<script>
@@ -28,6 +29,10 @@
 			cmm.loginPage(`${ctx}`)
 			cmm.joinPage(`${ctx}`)
 			cmm.board(`${ctx}`)
+			$(`#manage-btn`).click(function(e) {
+				e.preventDefault()
+				location.href = `${ctx}/move/manage/mng`
+			})
 		</script>
 	</body>
 </html>

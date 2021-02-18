@@ -8,6 +8,9 @@
 <form>
 	<h1>마이페이지</h1>
 	<div style="text-align: center; margin-top:30px;">
+		<h3>환영합니다 !</h3>
+	</div>
+	<div style="text-align: center; margin-top:30px;">
 		<label for="password"><b>NEW PW</b></label>
 		<input type="password" placeholder="Enter new password" id="password" style="width:20%;height:25px;font-size:medium;" required>
 		<button style="width:200px;" id="modify-btn">비밀번호 수정</button>

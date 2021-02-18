@@ -2,12 +2,12 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.mem.service.MemberMapper">
 <insert id="insert" parameterType="com.example.demo.mem.service.Member">
-	insert into members (memid, password)
-	values (#{memid}, #{password})
+	insert into members (memid, name, password)
+	values (#{memid}, #{name}, #{password})
 </insert>
 <select id="selectById" resultType="com.example.demo.mem.service.Member"
 parameterType="com.example.demo.mem.service.Member">
-	select memid, password from members
+	select memid, name, password from members
 	where memid like #{memid} and password like #{password}
 </select>
 <update id="update" parameterType="com.example.demo.mem.service.Member">

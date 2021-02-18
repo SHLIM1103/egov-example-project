@@ -13,14 +13,14 @@ board = (() => {
 		contentType:'application/json',
 		success: d => {
 			if(d.message === 'SUCCESS'){
-				alert(`글쓰기 성공`)
+				alert(`게시글 작성 완료 !`)
 				 location.href =`${x}/move/board/writerList`
 			}else{
-				alert('글쓰기 실패')
+				alert('게시글 작성 실패 ! 다시 시도해 주세요.')
 			}
 		},
 		error: e => {
-        	alert('글쓰기 에러')
+        	alert('게시글 작성 에러')
 		}
 	})
 }
@@ -67,13 +67,13 @@ const list = x =>{
 						contentType: `application/json`,
 						success: d => {
 							if(d.message === 'SUCCESS') {
-								alert(`수정 성공`)
+								alert(`수정 성공 !`)
 								location.href=`${x}/move/board/writerList`
 							}else {
-								alert(`수정 실패`)
+								alert(`수정 실패 ! 다시 시도해 주세요.`)
 							}
 						},
-						error: e => { alert(`수정 에러`)}
+						error: e => { alert(`게시글 수정 에러`)}
 					})
 				})
         	})
@@ -89,13 +89,13 @@ const list = x =>{
 					contentType: `application/json`,
 					success: d => {
 						if(d.message === `SUCCESS`) {
-							alert(`삭제 완료`)
+							alert(`삭제 완료 !`)
 							location.href=`${x}/move/board/writerList`
 						}else {
-							alert(`삭제 실패`)
+							alert(`삭제 실패 ! 다시 시도해 주세요.`)
 						}
 					},
-					error: e => { alert(`삭제 에러`)}
+					error: e => { alert(`게시글 삭제 에러`)}
 				})
 			})
 		})
