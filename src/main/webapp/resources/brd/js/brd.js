@@ -29,16 +29,16 @@ brd = (() => {
 
 	const list = x =>{
 		$.getJSON(`${x}/boards/list`, d => {
-				$.each(d, (i, j) => {
-					$(`<tr>
-						<td>${j.boardNum}</td>
-						<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
-						<td>${j.writtenDate}</td></tr>`)
-						.css({padding: `20px`, textAlign: `center`})
-						.appendTo(`#tab`)
-				})
+			$.each(d, (i, j) => {
+				$(`<tr>
+					<td>${j.boardNum}</td>
+					<td><a class="title" href="#" id="${j.boardNum}">${j.title}</a></td>
+					<td>${j.writtenDate}</td></tr>`)
+					.css({padding: `20px`, textAlign: `center`})
+					.appendTo(`#tab`)
+			})
 			$(`.title`).each(function(){
-				$(this).click(e => {
+				$(this).click( e => {
 					e.preventDefault()
 					localStorage.setItem(`title`, `${this.id}`)
 					location.href=`${x}/move/brd/det`
@@ -53,11 +53,11 @@ brd = (() => {
 			$(`#boardTitle`).text(d.title)
 			$(`#boardContent`).text(d.content)
 			$(`#writtenDate`).text(d.writtenDate)
-			 $('#update').click(e => { 
+			 $('#update').click( e => { 
              $('#boardTitle').html('<input type ="text" style="width:98%; height:100%;" id="update-title" value="'+d.title+'"/>')
              $('#boardContent').html('<input type="text" id="update-content" style="width:98%; height: 300px" value="' +d.content + '"/>')
              $(`#update`).html('<div id="confirm">수정완료</div>')
-				$(`#confirm`).click(e => {
+				$(`#confirm`).click( e => {
 					e.preventDefault()
 					$.ajax({
 						url: `${x}/boards/update`,
@@ -81,7 +81,7 @@ brd = (() => {
 					})
 				})
         	})
-			$(`#delete`).click(e => {
+			$(`#delete`).click( e => {
 				e.preventDefault()
 				$.ajax({
 					url: `${x}/boards/remove`,
@@ -105,4 +105,4 @@ brd = (() => {
 		})
 	}
 	return { list, writer, det }
-	})()
+})()

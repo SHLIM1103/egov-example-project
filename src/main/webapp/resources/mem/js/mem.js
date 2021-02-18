@@ -26,7 +26,7 @@ mem = (() => {
 	}
 	
 	const login = x => {
-		$(`#login-btn`).click(e => {
+		$(`#login-btn`).click( e => {
 			e.preventDefault()
 			$.ajax({
 				url:`${x}/members/login`,
@@ -59,6 +59,7 @@ mem = (() => {
 	
 	const modify = x => {
 		$(`#modify-btn`).click( e => {
+			e.preventDefault()
 			$.ajax({
 				url:`${x}/members/modify`,
 				type:`PUT`,
@@ -71,8 +72,8 @@ mem = (() => {
 				success: data => {
 					if(data.message === 'SUCCESS'){
 						alert('비밀번호 수정 완료 !')
-							location.reload();
-							sessionStorage.setItem('password', data.sessionMember.password)
+						location.reload();
+						sessionStorage.setItem('password', data.sessionMember.password)
 					}else{
 						alert('비밀번호 수정 실패 ! 다시 시도해 주세요.')
 							location.reload();
@@ -87,7 +88,8 @@ mem = (() => {
 	
 	const withdrawal = x => {
 		$(`#withdrawal-btn`).click( e => {
-				$.ajax({
+			e.preventDefault()
+			$.ajax({
 				url:`${x}/members/withdrawal`,
 				type:`DELETE`,
 				data: JSON.stringify({
@@ -98,15 +100,15 @@ mem = (() => {
 				success: data => {
 					if(data.message === 'SUCCESS'){
 						alert('탈퇴 완료 !')
-							sessionStorage.clear()
-							location.href = `${x}/`
+						sessionStorage.clear()
+						location.href = `${x}/`
 					}else{
 						alert('탈퇴 실패 !')
-							location.reload();
+						location.reload();
 					}
 				},
 				error: error => {
-				alert(`탈퇴 도중 에러가 발생하였습니다.`)
+					alert(`탈퇴 도중 에러가 발생하였습니다.`)
 				}
 			})
 		})
@@ -118,5 +120,17 @@ mem = (() => {
 			location.href = `${x}/`
 		})
 	}
-	return { join, login, modify, withdrawal, logout }
+	
+	const list = x => {
+		$.getJSON(`${x}/members/list`, d => {
+			$.each(d, (i, j) => {
+				$(`<tr><td style="text-align: center">${j.memid}</td>
+				   <td style="text-align: center">${j.name}</td></tr>`)
+				.css({fontSize: `medium`})
+				.appendTo(`#mem-tab`)
+			})
+		})
+	}
+	
+	return { join, login, modify, withdrawal, logout, list }
 })()

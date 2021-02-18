@@ -1,23 +1,24 @@
 'use strict'
 var cmm = cmm || {}
 cmm = (() => {
-	const init = x => {
-		$(`#prd-btn`).click(e => { location.href=`${x}/move/prd/list` })
+	const home = x => {
+		$(`#home-btn`).click( e => { location.href=`${x}/` })
 	}
 	
-	const home = x => {
-		$(`#home-btn`).click(e => { location.href=`${x}/` })
+	const plist = x => {
+		$(`#prd-btn`).click( e => { location.href=`${x}/move/prd/list` })
+	}
+	
+	const add = x => {
+		$(`#add-btn`).click( e => { location.href=`${x}/move/prd/add` })
 	}
 	
 	const write = x => {
 		$(`#wri`).click( e => { location.href=`${x}/move/brd/writer` })
 	}
-	const add = x => {
-		$(`#add-btn`).click(e => { location.href=`${x}/move/prd/add` })
-	}
 	
 	const board = x => {
-		$(`#board-btn`).click(e => { location.href=`${x}/move/brd/writerList` })
+		$(`#board-btn`).click( e => { location.href=`${x}/move/brd/writerList` })
 	}
 	
 	const joinPage = x => {
@@ -32,12 +33,12 @@ cmm = (() => {
 		$(`#mpg-btn`).click( e => { location.href=`${x}/move/mem/myPage` })
 	}
 	
-	const auth = x => { 
-		$(`#auth-btn`).click( e => {
-			e.preventDefault()
-			location.href=`${x}/move/cmm/auth`
-		})
+	const mgr = x => {
+		$(`#manage-btn`).click( e => { location.href = `${x}/move/mem/mgr` })
 	}
 	
-	return { init, home, add, joinPage, loginPage, board, mpg, auth, write }
+	const auth = x => { 
+		$(`#auth-btn`).click( e => { location.href=`${x}/move/cmm/auth` })
+	}
+	return { plist, home, add, joinPage, loginPage, board, mpg, auth, write, mgr }
 })()

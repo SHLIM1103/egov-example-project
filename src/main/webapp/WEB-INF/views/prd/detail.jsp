@@ -28,16 +28,16 @@
 	</tbody>
 </table>
 <div style="text-align: center; padding-top: 30px;">
-	<button id="back-btn">목록보기</button>
-	<button id="home-btn">HOME</button>
-</div>
-<div style="text-align: center; padding-top: 10px;">
 	<button id="update-btn">수정하기</button>
 	<button id="delete-btn">삭제하기</button>
+</div>
+<div style="text-align: center; padding-top: 10px;">
+	<button id="auth-btn">HOME</button>
+	<button id="back-btn">목록보기</button>
 </div>
 <script src="${cmm}/js/cmm.js"></script>
 <script src="${prdt}/js/prd.js"></script>
 <script>
 	prd.detail(`${ctx}`)
-	cmm.home(`${ctx}`)
+	cmm.auth(`${ctx}`)
 </script>

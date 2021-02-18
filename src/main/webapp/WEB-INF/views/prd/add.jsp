@@ -43,9 +43,7 @@
 <script src="${prdt}/js/prd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>
 <script>
-	$(`#done-btn`).click(function(e){
-		e.preventDefault()
-		prd.done(`${ctx}`)})
+	prd.done(`${ctx}`)
 	cmm.auth(`${ctx}`)
-	cmm.init(`${ctx}`)
+	cmm.plist(`${ctx}`)
 </script>

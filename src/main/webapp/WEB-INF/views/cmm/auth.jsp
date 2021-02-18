@@ -14,8 +14,7 @@
 <script src="${cmm}/js/cmm.js"></script>
 <script src="${mem}/js/mem.js"></script>
 <script>
-	cmm.init(`${ctx}`)
-	cmm.board(`${ctx}`)
+	cmm.plist(`${ctx}`)
 	cmm.board(`${ctx}`)
 	cmm.mpg(`${ctx}`)
 	mem.logout(`${ctx}`)

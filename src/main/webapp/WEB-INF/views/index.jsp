@@ -25,10 +25,7 @@
 		<script>
 			cmm.loginPage(`${ctx}`)
 			cmm.joinPage(`${ctx}`)
-			$(`#manage-btn`).click(function(e) {
-				e.preventDefault()
-				location.href = `${ctx}/move/manage/mng`
-			})
+			cmm.mgr(`${ctx}`)
 		</script>
 	</body>
 </html>

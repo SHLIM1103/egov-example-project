@@ -1,15 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <style>
 	h1 { text-align: center; padding-top: 20px; padding-bottom: 20px; }
+	h3 { text-align: center; margin-top:30px; }
 	button{ width:100px;height:35px;font-size: 15px;background:#33CC99;color:#fff;border:none; }
 	button:hover { opacity: 0.8; }
 </style>
 
+<h1>마이페이지</h1>
+<h3>환영합니다 !</h3>
 <form>
-	<h1>마이페이지</h1>
-	<div style="text-align: center; margin-top:30px;">
-		<h3>환영합니다 !</h3>
-	</div>
 	<div style="text-align: center; margin-top:30px;">
 		<label for="password"><b>비밀번호 변경</b></label>
 		<input type="password" placeholder="Enter new password" id="password" style="width:20%;height:25px;font-size:medium;" required>

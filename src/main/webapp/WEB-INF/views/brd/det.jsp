@@ -31,8 +31,8 @@
 	<button id="delete">삭제하기</button>
 </div>
 <div style="text-align: center; padding-top: 10px;">
-	<button id="board-btn">목록보기</button>
 	<button id="auth-btn">HOME</button>
+	<button id="board-btn">목록보기</button>
 </div>
 <script src="${brd}/js/brd.js"></script>
 <script src="${cmm}/js/cmm.js"></script>

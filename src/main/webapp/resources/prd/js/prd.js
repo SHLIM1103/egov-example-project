@@ -2,25 +2,28 @@
 var prd = prd || {}
 prd = (() => {
 	const done = x => {
-		$.ajax({
-			url: `${x}/products`,
-			type: `POST`,
-			data: JSON.stringify({
-				prdName: $(`#prdName`).val(),
-				price: $(`#price`).val(),
-				inventory: $(`#inventory`).val() 
-			}),
-			dataType: `json`,
-			contentType: `application/json`,
-			success: d => {
-				if(d.message === `SUCCESS`) {
-					location.href=`${x}/move/prd/list`
-					alert(`등록 완료`)
-				} else{
-					alert(`등록 실패 ! 다시 시도해 주세요.`)
-				}
-			},
-			error: e => { alert(`제품 등록 실패: ${e}`)	}
+		$(`#done-btn`).click( e => {
+			e.preventDefault()
+			$.ajax({
+				url: `${x}/products`,
+				type: `POST`,
+				data: JSON.stringify({
+					prdName: $(`#prdName`).val(),
+					price: $(`#price`).val(),
+					inventory: $(`#inventory`).val() 
+				}),
+				dataType: `json`,
+				contentType: `application/json`,
+				success: d => {
+					if(d.message === `SUCCESS`) {
+						location.href=`${x}/move/prd/list`
+						alert(`등록 완료`)
+					} else{
+						alert(`등록 실패 ! 다시 시도해 주세요.`)
+					}
+				},
+				error: e => { alert(`제품 등록 실패: ${e}`)	}
+			})
 		})
 	}
 	
@@ -36,7 +39,7 @@ prd = (() => {
 			})
 				
 			$(`.title`).each(function(){
-				$(this).click(e => {
+				$(this).click( e => {
 					e.preventDefault()
 					localStorage.setItem(`prdId`, `${this.id}`)
 					location.href=`${x}/move/prd/detail`
@@ -53,12 +56,13 @@ prd = (() => {
 			$(`#pPrice`).text(d.price)
 			$(`#pInventory`).text(d.inventory)
 			
-			$(`#update-btn`).click(e => {
+			$(`#update-btn`).click( e => {
+				e.preventDefault()
 				$(`#pName`).html('<input id="update-prdName" type="text" value="'+ d.prdName +'"/>')
 				$(`#pPrice`).html('<input id="update-price" type="text" value="'+ d.price +'"/>')
 				$(`#pInventory`).html('<input id="update-inventory" type="text" value="'+ d.inventory +'"/>')
 				$(`#update-btn`).html('<div id="confirm-btn">수정완료</div>')
-				$(`#confirm-btn`).click(e => {
+				$(`#confirm-btn`).click( e => {
 					e.preventDefault()
 					$.ajax({
 						url: `${x}/products`,
@@ -79,12 +83,12 @@ prd = (() => {
 								alert(`수정 실패 !`)
 							}
 						},
-						error: e => { alert(`에러 발생 ! ${e}`)}
+						error: e => { alert(`에러 발생 ! ${e}`) }
 					})
 				})
 			})
 			
-			$(`#delete-btn`).click(e => {
+			$(`#delete-btn`).click( e => {
 				e.preventDefault()
 				$.ajax({
 					url: `${x}/products`,
@@ -102,7 +106,7 @@ prd = (() => {
 							alert(`삭제 실패 !`)
 						}
 					},
-					error: e => { alert(`에러 발생 ! ${e}`)}
+					error: e => { alert(`에러 발생 ! ${e}`) }
 				})
 			})
 		})

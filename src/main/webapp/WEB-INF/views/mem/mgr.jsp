@@ -19,9 +19,9 @@
 	<button id="home-btn">HOME</button>
 </div>
 <script src="${cmm}/js/cmm.js"></script>
-<script src="${adm}/js/adm.js"></script>
+<script src="${mem}/js/mem.js"></script>
 <script>
-	adm.list(`${ctx}`)
+	mem.list(`${ctx}`)
 	cmm.home(`${ctx}`)
 </script>
 
