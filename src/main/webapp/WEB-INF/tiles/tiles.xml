@@ -4,9 +4,10 @@
 
 <tiles-definitions>
 	<definition name="index" template="/WEB-INF/views/move.jsp">
-		<put-attribute name="head"
-			value="/WEB-INF/views/head.jsp" />
+	
+		<put-attribute name="head" value="/WEB-INF/views/head.jsp" />
 		<put-attribute name="container" value="" />
+		
 	</definition>
 
 
@@ -19,10 +20,12 @@
 		<put-attribute name="container"
 			value="/WEB-INF/views/manage/{1}/{2}.jsp" />
 	</definition>
-
-	<definition name="manage:*/*/*" extends="index">
+	
+	<!--홈컨트롤러에서 나온 값-->
+	<definition name="manage2:*/*" extends="index">
 		<put-attribute name="container"
-			value="/WEB-INF/views/manage/{1}/{2}/{3}.jsp" />
+			value="/WEB-INF/views/manage/{1}/{2}.jsp" />
 	</definition>
+	
 
 </tiles-definitions>
